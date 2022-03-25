@@ -1,0 +1,8 @@
+{
+  "name": "laundry-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Cori-YS/laundry-api.git",
+  "author": "Ismélio Cori <ismeliocori@hotmail.com>",
+  "license": "MIT"
+}
