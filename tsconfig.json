@@ -3,8 +3,12 @@
     "target": "es2016",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+
     "module": "commonjs",
     "baseUrl": "./src",
+    "rootDir": "./",
+    "moduleResolution": "node",
+
     "paths": {
       "@modules/*": ["modules/*"],
       "@config/*": ["config/*"],
@@ -12,10 +16,12 @@
       "@errors/*": ["errors/*"],
       "@utils/*": ["utils/*"]
     },
-    "resolveJsonModule": true,
+
+    "outDir": "./dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  
   }
 }
