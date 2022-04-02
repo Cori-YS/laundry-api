@@ -15,8 +15,6 @@ app.use(express.json());
 
 app.use(router);
 
-app.listen(3333, () => console.log("Server is running!"));
-
 app.use(
   (err: Error, request: Request, response: Response, next: NextFunction) => {
     if (err instanceof AppError) {
@@ -31,3 +29,5 @@ app.use(
     });
   }
 );
+
+app.listen(3333, () => console.log("Server is running!"));
