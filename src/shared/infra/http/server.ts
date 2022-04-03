@@ -8,7 +8,7 @@ import createConnection from "@shared/infra/typeorm";
 
 import { AppError } from "@shared/errors/AppError";
 
-createConnection();
+createConnection("localhost");
 
 const app = express();
 

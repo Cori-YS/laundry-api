@@ -5,7 +5,7 @@
   "username": "postgres",
   "password": "password",
   "database": "laundry",
-   "entities": ["**/entities/**/*.ts"],
+  "entities": ["**/entities/**/*.ts"],
   "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
   "cli": {
     "migrationsDir": "./src/shared/infra/typeorm/migrations"
