@@ -165,7 +165,7 @@ Deve ser possivel deletar uma roupa
 Apenas o usário dono das roupas deletar
 as suas roupas
 
-# Prestação de serciço (to_wash)
+# Prestação de (to_wash)
 
 **RF**
 Deve ser possivel cadastrar um to_wash.
