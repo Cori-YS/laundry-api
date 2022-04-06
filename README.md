@@ -110,7 +110,7 @@ Deve ser possivel cadastrar um tecido
 **RN**
 
 Não deve ser possivel cadastrar um tecido com o nome de um já existente
-Não deve ser possivel cadatrar uma vaga por um usuário que não é admin
+Não deve ser possivel cadatrar uma tecido por um usuário que não é admin
 
 # Listagem de tecidos (fabrics)
 
@@ -132,6 +132,38 @@ Deve ser possivel deletar um tecido
 **RN**
 
 Apenas um usário admin pode deletar um tecido
+
+# Cadastro de serviço
+
+**RF**
+
+Deve ser possivel cadastrar um serviço
+
+**RN**
+
+Não deve ser possivel cadastrar um serviço com o nome de um já existente
+Não deve ser possivel cadatrar uma serviço por um usuário que não é admin
+
+# Listagem de serviços
+
+**RF**
+
+Deve ser possivel listar todos os serviços
+Deve ser possivel listar um serviço por ID
+
+**RN**
+
+Não deve ser possivel listar um serviço que não existe
+
+# Deletar serviço
+
+**RF**
+
+Deve ser possivel deletar um serviço
+
+**RN**
+
+Apenas um usário admin pode deletar um serviço
 
 # Cadastro de roupas
 
