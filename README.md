@@ -9,3 +9,4 @@ This is an rest api, that can be used to manage a laundry.
 # Regra de negocio
 
 \*\* Não deve ser possivel cadastrar uma categoria com o nome de uma já existente
+\*\* Não deve ser possivel cadstrar uma vaga por um usuário que não é admin
