@@ -85,7 +85,6 @@ Não deve ser possivel cadatrar uma categoria por um usuário que não é admin
 **RF**
 
 Deve ser possivel listar todas as categorias
-Deve ser possivel listar uma categoria por ID
 
 **RN**
 
