@@ -97,7 +97,7 @@ Não deve ser possivel listar uma categoria que não existe
 Deve ser possivel deletar uma categoria
 
 **RN**
-
+Não de ser possivel listar uma categoria não existente
 Apenas um usário admin pode deletar uma categoria
 
 # Cadastro de tecidos (fabrics)
