@@ -1,3 +1,4 @@
+import { Category } from "@modules/clothes/infra/typeorm/entities/Category";
 import { ICategoriesRepository } from "@modules/clothes/repositories/ICategoriesRepository";
 import { inject, injectable } from "tsyringe";
 
@@ -8,7 +9,7 @@ class ListCategoriesUseCase {
     private categoriesRepository: ICategoriesRepository
   ) {}
 
-  async execute() {
+  async execute(): Promise<Category[]> {
     return await this.categoriesRepository.list();
   }
 }
