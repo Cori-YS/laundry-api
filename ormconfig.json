@@ -3,7 +3,7 @@
   "port": "5432",
   "host": "localhost",
   "username": "postgres",
-  "password": "ricardo123",
+  "password": "password",
   "database": "laundry",
   "entities": ["**/entities/**/*.ts"],
   "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],

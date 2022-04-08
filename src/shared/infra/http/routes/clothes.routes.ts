@@ -5,17 +5,4 @@ import { Router } from "express";
 
 const clothesRoutes = Router();
 
-let createCategoryController = new CreateCategoryController();
-let listCategoriesController = new ListCategoriesController();
-let deleteCategoryController = new DeleteCategoryController();
-
-clothesRoutes.post("/categories", createCategoryController.handle);
-
-clothesRoutes.get("/categories", listCategoriesController.handle);
-
-clothesRoutes.delete(
-  "/categories/:category_id",
-  deleteCategoryController.handle
-);
-
 export { clothesRoutes };

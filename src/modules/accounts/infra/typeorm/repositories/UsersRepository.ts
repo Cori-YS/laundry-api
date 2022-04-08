@@ -9,13 +9,14 @@ class UsersRepository implements IUsersRepository {
   constructor() {
     this.repository = getRepository(User);
   }
+
   async create({
     id,
     name,
     password,
     email,
     address,
-    avatar
+    avatar,
   }: ICreateUserDTO): Promise<void> {
     const user = this.repository.create({
       id,
@@ -23,20 +24,25 @@ class UsersRepository implements IUsersRepository {
       password,
       email,
       address,
-      avatar
+      avatar,
     });
 
     await this.repository.save(user);
   }
+
   async findByEmail(email: string): Promise<User> {
     const user = await this.repository.findOne({ email });
     return user;
   }
+
   async findById(id: string): Promise<User> {
     const user = await this.repository.findOne(id);
     return user;
   }
 
+  async closeAccount(id: string): Promise<void> {
+    await this.repository.delete(id);
+  }
 }
 
 export { UsersRepository };

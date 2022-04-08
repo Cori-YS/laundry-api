@@ -13,7 +13,7 @@ interface IResponse {
   user: {
     name: string;
     email: string;
-  },
+  };
   token: string;
 }
 
@@ -22,9 +22,9 @@ class AuthenticateUserUseCase {
   constructor(
     @inject("UsersRepository")
     private usersRepository: IUsersRepository
-    ) {}
+  ) {}
 
-  async execute({ email, password}: IRequest): Promise<IResponse> {
+  async execute({ email, password }: IRequest): Promise<IResponse> {
     // User exists
     const user = await this.usersRepository.findByEmail(email);
 
@@ -36,13 +36,13 @@ class AuthenticateUserUseCase {
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      throw new AppError("Email or password  incorrect!");
+      throw new AppError("Email or password is incorrect!");
     }
 
     // Save Token
     const token = sign({}, "51f0cc41f89738b2c779ae8e61e45adf", {
       subject: user.id,
-      expiresIn: "7d"
+      expiresIn: "7d",
     });
 
     const tokenReturn: IResponse = {
@@ -57,5 +57,4 @@ class AuthenticateUserUseCase {
   }
 }
 
-export { AuthenticateUserUseCase }
-
+export { AuthenticateUserUseCase };
