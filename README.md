@@ -85,7 +85,6 @@ Não deve ser possivel cadatrar uma categoria por um usuário que não é admin
 **RF**
 
 Deve ser possivel listar todas as categorias
-Deve ser possivel listar uma categoria por ID
 
 **RN**
 
@@ -98,7 +97,7 @@ Não deve ser possivel listar uma categoria que não existe
 Deve ser possivel deletar uma categoria
 
 **RN**
-
+Não de ser possivel listar uma categoria não existente
 Apenas um usário admin pode deletar uma categoria
 
 # Cadastro de tecidos (fabrics)
