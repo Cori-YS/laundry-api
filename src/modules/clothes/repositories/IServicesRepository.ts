@@ -1,10 +1,10 @@
 import { ICreateServicesDTO } from "../dtos/ICreateServicesDTO";
-import { Services } from "../infra/typeorm/entities/Services";
-
+import { Service } from "../infra/typeorm/entities/Service";
 
 interface IServicesRepository {
-  create(data: ICreateServicesDTO): Promise<Services>;
-  findByName(name: string): Promise<Services>;
+  create(data: ICreateServicesDTO): Promise<Service>;
+  findByName(name: string): Promise<Service>;
+  list(): Promise<Service[]>;
 }
 
-export { IServicesRepository }
+export { IServicesRepository };

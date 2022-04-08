@@ -116,7 +116,6 @@ Não deve ser possivel cadatrar uma tecido por um usuário que não é admin
 **RF**
 
 Deve ser possivel listar todos os tecidos
-Deve ser possivel listar um tecido por ID
 
 **RN**
 
@@ -148,7 +147,6 @@ Não deve ser possivel cadatrar uma serviço por um usuário que não é admin
 **RF**
 
 Deve ser possivel listar todos os serviços
-Deve ser possivel listar um serviço por ID
 
 **RN**
 

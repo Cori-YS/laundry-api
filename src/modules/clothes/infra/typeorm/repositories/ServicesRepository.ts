@@ -1,27 +1,37 @@
 import { ICreateServicesDTO } from "@modules/clothes/dtos/ICreateServicesDTO";
 import { IServicesRepository } from "@modules/clothes/repositories/IServicesRepository";
 import { getRepository, Repository } from "typeorm";
-import { Services } from "../entities/Services";
+import { Service } from "../entities/Service";
 
 class ServicesRepository implements IServicesRepository {
-  private repository: Repository<Services>;
+  private repository: Repository<Service>;
 
   constructor() {
-    this.repository = getRepository(Services);
+    this.repository = getRepository(Service);
   }
-  async create({ name, description, price }: ICreateServicesDTO): Promise<Services> {
+
+  async create({
+    name,
+    description,
+    price,
+  }: ICreateServicesDTO): Promise<Service> {
     const services = this.repository.create({
-       name, 
-       description, 
-       price 
+      name,
+      description,
+      price,
     });
 
     await this.repository.save(services);
 
     return services;
   }
-  async findByName(name: string): Promise<Services> {
-     return await this.repository.findOne({ name });
+
+  async findByName(name: string): Promise<Service> {
+    return await this.repository.findOne({ name });
+  }
+
+  async list(): Promise<Service[]> {
+    return this.repository.find();
   }
 }
 

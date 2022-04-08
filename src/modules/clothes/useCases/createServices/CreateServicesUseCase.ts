@@ -16,11 +16,13 @@ class CreateServicesUseCase {
     private servicesRepository: IServicesRepository
   ) {}
 
-  async execute({ name, description, price}: IRequest): Promise<Services> {
-    const servicesAlreadyExists = await this.servicesRepository.findByName(name);
+  async execute({ name, description, price }: IRequest): Promise<Services> {
+    const servicesAlreadyExists = await this.servicesRepository.findByName(
+      name
+    );
 
     if (servicesAlreadyExists) {
-      throw new AppError("Services Already Exists!");
+      throw new AppError("Service Already Exists!");
     }
 
     return await this.servicesRepository.create({ name, description, price });
