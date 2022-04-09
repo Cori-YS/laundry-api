@@ -1,4 +1,4 @@
-import { Services } from "@modules/clothes/infra/typeorm/entities/Services";
+import { Service } from "@modules/clothes/infra/typeorm/entities/Service";
 import { IServicesRepository } from "@modules/clothes/repositories/IServicesRepository";
 import { AppError } from "@shared/errors/AppError";
 import { inject, injectable } from "tsyringe";
@@ -16,7 +16,7 @@ class CreateServicesUseCase {
     private servicesRepository: IServicesRepository
   ) {}
 
-  async execute({ name, description, price }: IRequest): Promise<Services> {
+  async execute({ name, description, price }: IRequest): Promise<Service> {
     const servicesAlreadyExists = await this.servicesRepository.findByName(
       name
     );
