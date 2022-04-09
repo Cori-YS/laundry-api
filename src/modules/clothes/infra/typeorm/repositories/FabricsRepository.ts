@@ -8,19 +8,28 @@ class FabricsRepository implements IFabricsRepository {
   constructor() {
     this.repository = getRepository(Fabrics);
   }
+
   async create({ name, description }: ICreateFabricsDTO): Promise<Fabrics> {
     const fabrics = this.repository.create({
       name,
-      description
-    })
+      description,
+    });
 
     await this.repository.save(fabrics);
 
     return fabrics;
   }
+
   async findByName(name: string): Promise<Fabrics> {
     return await this.repository.findOne({ name });
   }
 
+  async list(): Promise<Fabrics[]> {
+    return await this.repository.find();
+  }
+
+  async delete(fabric_id: string): Promise<void> {
+    await this.repository.delete(fabric_id);
+  }
 }
 export { FabricsRepository };
