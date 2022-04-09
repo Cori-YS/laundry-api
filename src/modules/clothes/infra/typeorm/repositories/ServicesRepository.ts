@@ -33,6 +33,14 @@ class ServicesRepository implements IServicesRepository {
   async list(): Promise<Service[]> {
     return this.repository.find();
   }
+
+  async findById(service_id: string): Promise<Service> {
+    return await this.repository.findOne(service_id);
+  }
+
+  async delete(service_id: string): Promise<void> {
+    await this.repository.delete(service_id);
+  }
 }
 
 export { ServicesRepository };
