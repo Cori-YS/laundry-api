@@ -24,6 +24,10 @@ class FabricsRepository implements IFabricsRepository {
     return await this.repository.findOne({ name });
   }
 
+  async findById(fabric_id: string): Promise<Fabrics> {
+    return await this.repository.findOne(fabric_id);
+  }
+
   async list(): Promise<Fabrics[]> {
     return await this.repository.find();
   }
