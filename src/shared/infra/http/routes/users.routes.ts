@@ -27,6 +27,6 @@ usersRoutes.patch(
 );
 
 // Close/Delete Account/User
-usersRoutes.delete("/", closeAccountController.handle);
+usersRoutes.delete("/close-account", closeAccountController.handle);
 
 export { usersRoutes };
