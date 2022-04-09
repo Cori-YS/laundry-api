@@ -9,7 +9,7 @@ class DeleteServiceUseCase {
     private servicesRepository: IServicesRepository
   ) {}
 
-  async handle(service_id: string): Promise<void> {
+  async execute(service_id: string): Promise<void> {
     const serviceExists = await this.servicesRepository.findById(service_id);
 
     if (!serviceExists) {
