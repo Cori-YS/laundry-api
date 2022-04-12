@@ -6,18 +6,18 @@ This is an rest api, that can be used to manage a laundry.
 
 **RF**
 
-Deve ser possivel cadastrar um usuário
+[X]-Deve ser possivel cadastrar um usuário
 
 **RN**
 
-Não deve ser possivel cadastrar um usuario com o email de um já existente
-Um usuário deve ser cadastrado como não sendo admin por default
+[X]-Não deve ser possivel cadastrar um usuario com o email de um já existente
+[X]-Um usuário deve ser cadastrado como não sendo admin por default
 
 # Promoção de usuarios
 
 **RF**
 
-Deve ser possivel tornar um usuário admin
+[X]-Deve ser possivel tornar um usuário admin
 Deve ser possivel tornar um usuário funcionário
 
 **RN**

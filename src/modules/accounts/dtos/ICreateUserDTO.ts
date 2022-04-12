@@ -5,6 +5,8 @@ interface ICreateUserDTO {
   email: string;
   address?: string;
   avatar?: string;
+  isAdmin?: boolean;
+  isEmployee?: boolean;
 }
 
 export { ICreateUserDTO };
