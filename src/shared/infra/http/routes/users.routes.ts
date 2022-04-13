@@ -8,6 +8,7 @@ import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 import { CloseAccountController } from "@modules/accounts/useCases/closeAccount/CloseAccountController";
 import { UpdateUserAdminController } from "@modules/accounts/useCases/updateUserAdmin/UpdateUserAdminController";
 import { ensureAdmin } from "../middlewares/ensureAdmin";
+import { UpdateUserEmployeeController } from "@modules/accounts/useCases/updateUserEmployee/UpdateUserEmployeeController";
 
 const usersRoutes = Router();
 
@@ -17,6 +18,7 @@ const createUserController = new CreateUserController();
 const updateUserAvatarController = new UpdateUserAvatarController();
 const closeAccountController = new CloseAccountController();
 const updateUserAdminController = new UpdateUserAdminController();
+const updateUserEmployeeController = new UpdateUserEmployeeController();
 
 // Create new User
 usersRoutes.post("/", createUserController.handle);
@@ -37,9 +39,17 @@ usersRoutes.patch(
   updateUserAdminController.handle
 );
 
+// Update user for Employee
+usersRoutes.patch(
+  "/user-Employee/:id",
+  ensureAuthenticated,
+  ensureAdmin,
+  updateUserEmployeeController.handle
+);
+
 // Close/Delete Account/User
 usersRoutes.delete(
-  "/close-account",
+  "/close-employee",
   ensureAuthenticated,
   closeAccountController.handle
 );
