@@ -18,11 +18,11 @@ This is an rest api, that can be used to manage a laundry.
 **RF**
 
 [X]-Deve ser possivel tornar um usuário admin
-Deve ser possivel tornar um usuário funcionário
+[X]-Deve ser possivel tornar um usuário funcionário
 
 **RN**
 
-Apenas um usuário admin pode tornar outro usuário admin ou funcionário
+[X]-Apenas um usuário admin pode tornar outro usuário admin ou funcionário
 
 # Demoção de usuarios
 
