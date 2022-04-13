@@ -4,6 +4,7 @@ import { inject, injectable } from "tsyringe";
 
 interface IRequest {
   user_id: string;
+  isEmployee: boolean;
 }
 
 @injectable()
@@ -13,14 +14,14 @@ class UpdateUserEmployeeUseCase {
     private usersRepository: IUsersRepository
   ) {}
 
-  async execute({ user_id }: IRequest): Promise<void> {
+  async execute({ user_id, isEmployee }: IRequest): Promise<void> {
     const user = await this.usersRepository.findById(user_id);
 
     if (!user.id) {
       throw new AppError("User not exists!");
     }
 
-    user.isEmployee = true;
+    user.isEmployee = isEmployee;
 
     await this.usersRepository.create(user);
   }

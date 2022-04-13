@@ -28,12 +28,12 @@ This is an rest api, that can be used to manage a laundry.
 
 **RF**
 
-Deve ser possivel tornar um usuário admin, não admin
-Deve ser possivel tornar um usuário funcionário, não funcionario
+[X]-Deve ser possivel tornar um usuário admin, não admin
+[X]-Deve ser possivel tornar um usuário funcionário, não funcionario
 
 **RN**
 
-Apenas um usuário admin pode demover um usuários
+[X]-Apenas um usuário admin pode demover um usuários
 
 # Encerramento de contas
 
