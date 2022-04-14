@@ -12,11 +12,6 @@ export class CreateServicesFabrics1649970499276 implements MigrationInterface {
         name: "services_fabrics",
         columns: [
           {
-            name: "id",
-            type: "uuid",
-            isPrimary: true,
-          },
-          {
             name: "service_id",
             type: "uuid",
           },
