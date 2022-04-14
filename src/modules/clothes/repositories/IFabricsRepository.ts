@@ -7,6 +7,7 @@ interface IFabricsRepository {
   findById(fabric_id: string): Promise<Fabrics>;
   list(): Promise<Fabrics[]>;
   delete(fabric_id: string): Promise<void>;
+  findByIds(fabrics_id: string[]): Promise<Fabrics[]>;
 }
 
 export { IFabricsRepository };

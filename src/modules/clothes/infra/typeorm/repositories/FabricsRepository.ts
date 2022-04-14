@@ -35,5 +35,9 @@ class FabricsRepository implements IFabricsRepository {
   async delete(fabric_id: string): Promise<void> {
     await this.repository.delete(fabric_id);
   }
+
+  async findByIds(fabrics_id: string[]): Promise<Fabrics[]> {
+    return await this.repository.findByIds(fabrics_id);
+  }
 }
 export { FabricsRepository };

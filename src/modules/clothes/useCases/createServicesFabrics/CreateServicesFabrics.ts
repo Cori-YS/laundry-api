@@ -1,3 +1,0 @@
-class CreateServicesFabrics {}
-
-export { CreateServicesFabrics };
