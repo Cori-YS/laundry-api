@@ -9,12 +9,14 @@ import { CloseAccountController } from "@modules/accounts/useCases/closeAccount/
 import { UpdateUserAdminController } from "@modules/accounts/useCases/updateUserAdmin/UpdateUserAdminController";
 import { ensureAdmin } from "../middlewares/ensureAdmin";
 import { UpdateUserEmployeeController } from "@modules/accounts/useCases/updateUserEmployee/UpdateUserEmployeeController";
+import { UpdateUserController } from "@modules/accounts/useCases/updateUser/UpdateUserController";
 
 const usersRoutes = Router();
 
 const uploadAvatar = multer(uploadConfig.upload("./tmp/avatar"));
 
 const createUserController = new CreateUserController();
+const updateUserController = new UpdateUserController();
 const updateUserAvatarController = new UpdateUserAvatarController();
 const closeAccountController = new CloseAccountController();
 const updateUserAdminController = new UpdateUserAdminController();
@@ -22,6 +24,13 @@ const updateUserEmployeeController = new UpdateUserEmployeeController();
 
 // Create new User
 usersRoutes.post("/", createUserController.handle);
+
+// Update a new User
+usersRoutes.put(
+  "/update", 
+  ensureAuthenticated, 
+  updateUserController.handle
+  );
 
 // Create a new avatar
 usersRoutes.patch(

@@ -7,6 +7,7 @@ This is an rest api, that can be used to manage a laundry.
 **RF**
 
 [X]-Deve ser possivel cadastrar um usuário
+O usuario de atualizar os seus dados 
 
 **RN**
 
@@ -39,7 +40,7 @@ This is an rest api, that can be used to manage a laundry.
 
 **RF**
 
-Deve ser possivel encerrar uma conta
+[X]-Deve ser possivel encerrar uma conta
 
 **RN**
 
