@@ -14,11 +14,13 @@ class ServicesRepository implements IServicesRepository {
     name,
     description,
     price,
+    fabrics,
   }: ICreateServicesDTO): Promise<Service> {
     const services = this.repository.create({
       name,
       description,
       price,
+      fabrics,
     });
 
     await this.repository.save(services);

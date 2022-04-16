@@ -1,5 +1,13 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryColumn,
+} from "typeorm";
 import { v4 as uuidV4 } from "uuid";
+import { Fabrics } from "./Fabrics";
 
 @Entity("services")
 class Service {
@@ -14,6 +22,14 @@ class Service {
 
   @Column()
   price: number;
+
+  @ManyToMany(() => Fabrics)
+  @JoinTable({
+    name: "services_fabrics",
+    joinColumns: [{ name: "service_id" }],
+    inverseJoinColumns: [{ name: "fabric_id" }],
+  })
+  fabrics: Fabrics[];
 
   @CreateDateColumn()
   created_at: Date;
