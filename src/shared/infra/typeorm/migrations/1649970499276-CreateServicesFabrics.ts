@@ -36,7 +36,6 @@ export class CreateServicesFabrics1649970499276 implements MigrationInterface {
         referencedColumnNames: ["id"],
         columnNames: ["service_id"],
         onDelete: "SET NULL",
-        onUpdate: "SET NULL",
       })
     );
 
@@ -48,7 +47,6 @@ export class CreateServicesFabrics1649970499276 implements MigrationInterface {
         referencedColumnNames: ["id"],
         columnNames: ["fabric_id"],
         onDelete: "SET NULL",
-        onUpdate: "SET NULL",
       })
     );
   }
