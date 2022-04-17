@@ -3,7 +3,6 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
-  JoinTable,
   OneToOne,
   PrimaryColumn,
 } from "typeorm";
