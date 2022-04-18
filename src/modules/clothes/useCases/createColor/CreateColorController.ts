@@ -8,7 +8,7 @@ class CreateColorController {
 
     const createColorUseCase = container.resolve(CreateColorUseCase);
 
-    const color = await createColorUseCase.execute(name);
+    const color = await createColorUseCase.execute({ name });
 
     return response.json(color);
   }

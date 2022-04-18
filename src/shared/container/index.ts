@@ -10,6 +10,8 @@ import { IFabricsRepository } from "@modules/clothes/repositories/IFabricsReposi
 import { FabricsRepository } from "@modules/clothes/infra/typeorm/repositories/FabricsRepository";
 import { IColorsRepository } from "@modules/clothes/repositories/IColorsRepository";
 import { ColorsRepository } from "@modules/clothes/infra/typeorm/repositories/ColorsRepository";
+import { IClothesRepository } from "@modules/clothes/repositories/IClothesRepository";
+import { ClothesRepository } from "@modules/clothes/infra/typeorm/repositories/ClothesRepository";
 
 container.registerSingleton<IUsersRepository>(
   "UsersRepository",
@@ -34,4 +36,9 @@ container.registerSingleton<IFabricsRepository>(
 container.registerSingleton<IColorsRepository>(
   "ColorsRepository",
   ColorsRepository
+);
+
+container.registerSingleton<IClothesRepository>(
+  "ClothesRepository",
+  ClothesRepository
 );

@@ -1,10 +1,10 @@
 import { CreateColorController } from "@modules/clothes/useCases/createColor/CreateColorController";
 import { Router } from "express";
 
-const colorsRouter = Router();
+const colorsRoutes = Router();
 
 const createColorController = new CreateColorController();
 
-colorsRouter.post("/", createColorController.handle);
+colorsRoutes.post("/", createColorController.handle);
 
-export { colorsRouter };
+export { colorsRoutes };

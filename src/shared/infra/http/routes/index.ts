@@ -2,7 +2,8 @@ import { Router } from "express";
 
 import { authenticateRoutes } from "./authenticate.routes";
 import { categoriesRoutes } from "./categories.routes";
-import { colorsRouter } from "./colors.routes";
+import { clothesRoutes } from "./clothes.routes";
+import { colorsRoutes } from "./colors.routes";
 import { fabricsRoutes } from "./fabrics.routes";
 import { servicesRoutes } from "./services.routes";
 import { usersRoutes } from "./users.routes";
@@ -14,6 +15,7 @@ router.use(authenticateRoutes);
 router.use("/services", servicesRoutes);
 router.use("/categories", categoriesRoutes);
 router.use("/fabrics", fabricsRoutes);
-router.use("/colors", colorsRouter);
+router.use("/colors", colorsRoutes);
+router.use("/clothes", clothesRoutes);
 
 export { router };
