@@ -4,6 +4,7 @@ import "express-async-errors";
 import { router } from "./routes";
 
 import "@shared/container";
+
 import createConnection from "@shared/infra/typeorm";
 
 import { AppError } from "@shared/errors/AppError";
