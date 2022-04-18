@@ -28,6 +28,10 @@ class AuthenticateUserUseCase {
     // User exists
     const user = await this.usersRepository.findByEmail(email);
 
+    if (user.isActive === false) {
+      throw new AppError("User without permission, talk to admin");
+    }
+
     if (!user) {
       throw new AppError("Email or password  incorrect!");
     }

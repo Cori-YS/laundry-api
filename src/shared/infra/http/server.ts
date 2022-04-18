@@ -9,7 +9,7 @@ import createConnection from "@shared/infra/typeorm";
 
 import { AppError } from "@shared/errors/AppError";
 
-createConnection("localhost");
+createConnection();
 
 const app = express();
 

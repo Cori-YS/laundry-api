@@ -10,6 +10,7 @@ import { UpdateUserAdminController } from "@modules/accounts/useCases/updateUser
 import { ensureAdmin } from "../middlewares/ensureAdmin";
 import { UpdateUserEmployeeController } from "@modules/accounts/useCases/updateUserEmployee/UpdateUserEmployeeController";
 import { UpdateUserController } from "@modules/accounts/useCases/updateUser/UpdateUserController";
+import { UpdateUserActiveController } from "@modules/accounts/useCases/updateUserActive/UpdateUserActiveController";
 
 const usersRoutes = Router();
 
@@ -21,6 +22,7 @@ const updateUserAvatarController = new UpdateUserAvatarController();
 const closeAccountController = new CloseAccountController();
 const updateUserAdminController = new UpdateUserAdminController();
 const updateUserEmployeeController = new UpdateUserEmployeeController();
+const updateUserActiveController = new UpdateUserActiveController();
 
 // Create new User
 usersRoutes.post("/", createUserController.handle);
@@ -54,6 +56,14 @@ usersRoutes.patch(
   ensureAuthenticated,
   ensureAdmin,
   updateUserEmployeeController.handle
+);
+
+// Update user for Activates
+usersRoutes.patch(
+  "/user-Active/:id",
+  ensureAuthenticated,
+  ensureAdmin,
+  updateUserActiveController.handle
 );
 
 // Close/Delete Account/User

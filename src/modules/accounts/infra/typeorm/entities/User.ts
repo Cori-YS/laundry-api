@@ -27,6 +27,9 @@ class User {
   @Column()
   avatar: string;
 
+  @Column()
+  isActive: boolean;
+
   @CreateDateColumn()
   created_at: Date;
 

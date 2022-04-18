@@ -7,6 +7,7 @@ interface ICreateUserDTO {
   avatar?: string;
   isAdmin?: boolean;
   isEmployee?: boolean;
+  isActive?: boolean;
 }
 
 export { ICreateUserDTO };
