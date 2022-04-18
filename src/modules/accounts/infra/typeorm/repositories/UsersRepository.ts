@@ -21,6 +21,7 @@ class UsersRepository implements IUsersRepository {
     avatar,
     isAdmin,
     isEmployee,
+    isActive,
   }: ICreateUserDTO): Promise<void> {
     const user = this.repository.create({
       id,
@@ -31,6 +32,7 @@ class UsersRepository implements IUsersRepository {
       avatar,
       isAdmin,
       isEmployee, 
+      isActive,
     });
 
     await this.repository.save(user);
