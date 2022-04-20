@@ -17,8 +17,6 @@ describe("Create a category", () => {
 
   afterAll(async () => {
     await connection.close();
-    //console.log("aqui");
-    //(await connection).close;
   });
 
   it("should be able to create a new category", async () => {
