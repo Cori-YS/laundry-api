@@ -29,11 +29,11 @@ class CategoriesRepository implements ICategoriesRepository {
   }
 
   async delete(category_id: string): Promise<void> {
-    await this.repository.delete(category_id);
+    await this.repository.delete({ id: category_id });
   }
 
-  async findById(category_id: any): Promise<Category> {
-    return await this.repository.findOne(category_id);
+  async findById(category_id: string): Promise<Category> {
+    return await this.repository.findOne({ id: category_id });
   }
 }
 
