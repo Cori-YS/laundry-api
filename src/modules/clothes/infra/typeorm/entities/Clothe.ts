@@ -27,20 +27,20 @@ class Clothe {
   description: string;
 
   @OneToOne(() => Color)
-  @JoinColumn()
-  color_id: string;
+  @JoinColumn({ name: "colorId" })
+  color: Color;
 
   @OneToOne(() => Fabrics)
-  @JoinColumn()
-  fabric_id: string;
+  @JoinColumn({ name: "fabricsId" })
+  fabric: Fabrics;
 
   @OneToOne(() => Category)
-  @JoinColumn()
-  category_id: string;
+  @JoinColumn({ name: "categoryId" })
+  category: Category;
 
   @OneToOne(() => Size)
-  @JoinColumn()
-  size_id: string;
+  @JoinColumn({ name: "sizeId" })
+  size: Size;
 
   @Column()
   iron: boolean;

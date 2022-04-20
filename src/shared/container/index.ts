@@ -12,6 +12,8 @@ import { IColorsRepository } from "@modules/clothes/repositories/IColorsReposito
 import { ColorsRepository } from "@modules/clothes/infra/typeorm/repositories/ColorsRepository";
 import { IClothesRepository } from "@modules/clothes/repositories/IClothesRepository";
 import { ClothesRepository } from "@modules/clothes/infra/typeorm/repositories/ClothesRepository";
+import { ISizesRepository } from "@modules/clothes/repositories/ISizesRepository";
+import { SizesRepository } from "@modules/clothes/infra/typeorm/repositories/SizesRepository";
 
 container.registerSingleton<IUsersRepository>(
   "UsersRepository",
@@ -41,4 +43,9 @@ container.registerSingleton<IColorsRepository>(
 container.registerSingleton<IClothesRepository>(
   "ClothesRepository",
   ClothesRepository
+);
+
+container.registerSingleton<ISizesRepository>(
+  "SizesRepository",
+  SizesRepository
 );
