@@ -21,6 +21,10 @@ class ColorsRepository implements IColorsRepository {
   async findByName(name: string): Promise<Color> {
     return await this.repository.findOne({ name });
   }
+
+  async findById(color_id: string): Promise<Color> {
+    return await this.repository.findOne({ id: color_id });
+  }
 }
 
 export { ColorsRepository };
