@@ -7,7 +7,7 @@ This is an rest api, that can be used to manage a laundry.
 **RF**
 
 [X]-Deve ser possivel cadastrar um usuário
-O usuario de atualizar os seus dados 
+[X]-O usuario de atualizar os seus dados 
 
 **RN**
 
@@ -52,12 +52,12 @@ Um admin pode apenas encerrar a sua conta se não for SuperAdmin
 
 **RF**
 
-Deve ser possivel bloquear a conta de um usuário
+[X]-Deve ser possivel bloquear a conta de um usuário
 
 **RN**
 
-A conta do SuperAdmin não pode ser bloqueada
-Apenas um admin pode bloquear a conta de um usuário
+[X]-A conta do SuperAdmin não pode ser bloqueada
+[X]-Apenas um admin pode bloquear a conta de um usuário
 
 # Listagem de usuarios
 

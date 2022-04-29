@@ -1,5 +1,7 @@
 import { container } from "tsyringe";
 
+import "@shared/container/providers";
+
 import { UsersRepository } from "@modules/accounts/infra/typeorm/repositories/UsersRepository";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { ICategoriesRepository } from "@modules/clothes/repositories/ICategoriesRepository";
@@ -14,6 +16,8 @@ import { IClothesRepository } from "@modules/clothes/repositories/IClothesReposi
 import { ClothesRepository } from "@modules/clothes/infra/typeorm/repositories/ClothesRepository";
 import { ISizesRepository } from "@modules/clothes/repositories/ISizesRepository";
 import { SizesRepository } from "@modules/clothes/infra/typeorm/repositories/SizesRepository";
+import { IToWashRepository } from "@modules/to_wash/repositories/IToWashRepository";
+import { ToWashRepository } from "@modules/to_wash/infra/typeorm/repositories/ToWashRepository";
 
 container.registerSingleton<IUsersRepository>(
   "UsersRepository",
@@ -49,3 +53,8 @@ container.registerSingleton<ISizesRepository>(
   "SizesRepository",
   SizesRepository
 );
+
+container.registerSingleton<IToWashRepository>(
+  "ToWashRepository",
+  ToWashRepository
+)
