@@ -28,11 +28,7 @@ const updateUserActiveController = new UpdateUserActiveController();
 usersRoutes.post("/", createUserController.handle);
 
 // Update a new User
-usersRoutes.put(
-  "/update", 
-  ensureAuthenticated, 
-  updateUserController.handle
-  );
+usersRoutes.put("/update", ensureAuthenticated, updateUserController.handle);
 
 // Create a new avatar
 usersRoutes.patch(
@@ -58,7 +54,7 @@ usersRoutes.patch(
   updateUserEmployeeController.handle
 );
 
-// Update user for Activates
+// Update user for Active
 usersRoutes.patch(
   "/user-Active/:id",
   ensureAuthenticated,
