@@ -11,6 +11,7 @@ class UsersRepository implements IUsersRepository {
     this.repository = getRepository(User);
   }
   
+  
 
   async create({
     id,
@@ -68,6 +69,11 @@ class UsersRepository implements IUsersRepository {
 
   async closeAccount(id: string): Promise<void> {
     await this.repository.delete(id);
+  }
+
+  async list(): Promise<User[]> {
+    const users = await this.repository.find();
+    return users;
   }
 }
 

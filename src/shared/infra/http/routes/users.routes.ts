@@ -11,6 +11,7 @@ import { ensureAdmin } from "../middlewares/ensureAdmin";
 import { UpdateUserEmployeeController } from "@modules/accounts/useCases/updateUserEmployee/UpdateUserEmployeeController";
 import { UpdateUserController } from "@modules/accounts/useCases/updateUser/UpdateUserController";
 import { UpdateUserActiveController } from "@modules/accounts/useCases/updateUserActive/UpdateUserActiveController";
+import { ListUserController } from "@modules/accounts/useCases/listUser/ListUserController";
 
 const usersRoutes = Router();
 
@@ -23,6 +24,7 @@ const closeAccountController = new CloseAccountController();
 const updateUserAdminController = new UpdateUserAdminController();
 const updateUserEmployeeController = new UpdateUserEmployeeController();
 const updateUserActiveController = new UpdateUserActiveController();
+const listUserController = new ListUserController();
 
 // Create new User
 usersRoutes.post("/", createUserController.handle);
@@ -36,6 +38,12 @@ usersRoutes.patch(
   ensureAuthenticated,
   uploadAvatar.single("avatar"),
   updateUserAvatarController.handle
+);
+
+usersRoutes.get(
+  "/",ensureAuthenticated, 
+  ensureAdmin, 
+  listUserController.handle
 );
 
 // Update user for Admin
